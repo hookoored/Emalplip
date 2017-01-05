@@ -1,0 +1,3 @@
+Emalplip v1.3.0 Alpha has now started.
+
+For more information, type "about".
