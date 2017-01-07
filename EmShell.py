@@ -28,20 +28,24 @@ number_vars = {}
 while True:
     #Get input
     Input = get_input()
-  
+    
+    #Test for empty input
+    if Input == []:
+        continue
+
     for item in range(len(Input) - 1):
-        print Input[item + 1]
+		
         '''This iterates through all of the items in Input and replaces them with
         their numeric value'''
         
-        '''if len(Input[item + 1]) == 0:
+        if len(Input[item + 1]) == 0:
             if Input[item + 1][0] == '!': 
                 if Input[item + 1][1:] in number_vars.keys():
                     Input[item + 1] = number_vars[Input[item + 1][1:]]
 
                 else:
                     errors.append('NameError: ' + Input[item + 1][1:] + ' is undefined')
-                    print 'NameError: ' + Input[item + 1][1:] + ' is undefined'''
+                    print 'NameError: ' + Input[item + 1][1:] + ' is undefined
             
         float_compile = '^\d+\.\d+$'
         int_compile = '^\d+$'
@@ -109,6 +113,7 @@ while True:
     elif Input[0] == 'print':
         for param in Input[1:]:
             print param
+            
     else:
         print 'NameError: ' + Input[0] + ' is undefined.'
         errors.append('NameError: ' + Input[0] + ' is undefined.')
