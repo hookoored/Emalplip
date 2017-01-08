@@ -1,7 +1,19 @@
 # Emalplip
 Emalplip is a new programming language.  
 
-This is a list of Emalplip updates.  
+##How To Run  
+
+1. Navigate to the Emalplip folder  
+`cd Documents\GitHub\Emalplip`  
+2.Run EmShell.py  
+`python EmShell.py`  
+
+###Making Emalplip More Convenient
+
+To add convenience, you can make a shortcut of EmShell.py.  
+Even more, you can create a shortcut of the folder itself.  
+
+##Updates  
 
 v1.0.0 Alpha:  
     -Added the about, add, subtract, multiply, divide, and modulo functions  
