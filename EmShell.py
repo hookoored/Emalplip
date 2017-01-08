@@ -30,7 +30,7 @@ while True:
     Input = get_input()
     
     #Test for empty input
-    if Input == []:
+    if Input == ['']:
         continue
 
     for item in range(len(Input) - 1):
