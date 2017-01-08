@@ -45,7 +45,7 @@ while True:
 
                 else:
                     errors.append('NameError: ' + Input[item + 1][1:] + ' is undefined')
-                    print 'NameError: ' + Input[item + 1][1:] + ' is undefined
+                    print 'NameError: ' + Input[item + 1][1:] + ' is undefined'
             
         float_compile = '^\d+\.\d+$'
         int_compile = '^\d+$'
