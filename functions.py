@@ -30,5 +30,3 @@ def modulo (Int):
         else:
             return Int[0] % Int[1]
             
-def error_message ():
-    print 'There\'s something wrong here... Don\'t worry, it\'ll be fixed soon!'
