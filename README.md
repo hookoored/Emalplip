@@ -13,6 +13,9 @@ Emalplip is a new programming language.
 To add convenience, you can make a shortcut of EmShell.py.  
 Even more, you can create a shortcut of the folder itself.  
 
+###Reporting Issues  
+Issues can be reported at https://github.com/hookoored/Emalplip/issues
+
 ##Updates  
 
 v1.0.0 Alpha:  
