@@ -30,7 +30,15 @@ while True:
     Input = get_input()
     
     #Test for empty input
-    if Input == ['']:
+    deleted = 0
+    
+    for index in range(len(Input)):
+        if Input[index - deleted] == '':
+            del Input[index - deleted]
+    
+    deleted = 0
+    
+    if Input == []:
         continue
 
     for item in range(len(Input) - 1):
