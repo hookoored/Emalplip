@@ -35,6 +35,7 @@ while True:
     for index in range(len(Input)):
         if Input[index - deleted] == '':
             del Input[index - deleted]
+            deleted += 1
     
     deleted = 0
     
