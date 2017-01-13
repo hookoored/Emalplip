@@ -8,7 +8,7 @@ about = about_file.read()
 errors = []
 inputs = []
 def get_input():
-    Input = raw_input('>>>')
+    Input = raw_input('>>> ')
     inputs.append(Input)
     return Input.split(' ')
 
@@ -89,29 +89,29 @@ while True:
         print sum(Input[1:])
       
     elif Input[0] == 'subtract':
-    	  print f.subtract(Input[1:])
+    	print f.subtract(Input[1:])
     
     elif Input[0] == 'multiply':
-	      print f.multiply(Input[1:])
+	    print f.multiply(Input[1:])
     
     elif Input[0] == 'divide':
-	      print f.divide(Input[1:])
+	    print f.divide(Input[1:])
     
     elif Input[0] == 'modulo':
-	      print f.modulo(Input[1:])
+	    print f.modulo(Input[1:])
 	 
     elif Input[0] == 'power':
-	      if len(Input) == 3:
-	          print int(Input[1]) ** int(Input[2])
-	      else:
-	          errors.append('ArgumentError: power takes 2 arguments')
-	          print 'ArgumentError:power takes 2 arguments'
+	    if len(Input) == 3:
+	        print int(Input[1]) ** int(Input[2])
+	    else:
+	        errors.append('ArgumentError: power takes 2 arguments')
+	        print 'ArgumentError:power takes 2 arguments'
     
     elif Input[0] == 'exit':
-    	  break
+    	 break
       
     elif Input[0] == 'defint':
-    	  number_vars[Input[1]] = int(Input[2])
+    	 number_vars[Input[1]] = int(Input[2])
     	
     elif Input[0] == 'run':
         code = open(Input[1])
