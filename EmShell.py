@@ -41,6 +41,12 @@ while True:
     
     if Input == []:
         continue
+    
+    #Name_error is used later
+    name_error = False
+    
+    #Part_of_string is used to reassemble strings.
+    part_of_string = False
 
     for item in range(len(Input) - 1):
 		
@@ -53,8 +59,8 @@ while True:
                     Input[item + 1] = number_vars[Input[item + 1][1:]]
 
                 else:
-                    errors.append('NameError: ' + Input[item + 1][1:] + ' is undefined')
-                    print 'NameError: ' + Input[item + 1][1:] + ' is undefined'
+                    errors.append('NameError: \'' + Input[item + 1][1:] + '\' is undefined')
+                    print 'NameError: \'' + Input[item + 1][1:] + '\' is undefined'
             
         float_compile = '^\d+\.\d+$'
         int_compile = '^\d+$'
@@ -69,7 +75,16 @@ while True:
                 
             elif re.match(int_compile, Input[item + 1]):
                 Input[item + 1] = int(Input[item + 1])
-              
+                
+            else:
+                errors.append("NameError: '%s' is not defined." % (Input[item + 1]))
+                print "NameError: '%s' is not defined." % (Input[item + 1])
+                name_error = True
+                
+    if name_error == True:
+        name_error == False
+        continue
+                              
     if Input[0] == 'about':
         print about
   
@@ -92,20 +107,21 @@ while True:
     	print f.subtract(Input[1:])
     
     elif Input[0] == 'multiply':
-	    print f.multiply(Input[1:])
+	print f.multiply(Input[1:])
     
     elif Input[0] == 'divide':
-	    print f.divide(Input[1:])
+	print f.divide(Input[1:])
     
     elif Input[0] == 'modulo':
-	    print f.modulo(Input[1:])
+	print f.modulo(Input[1:])
 	 
     elif Input[0] == 'power':
-	    if len(Input) == 3:
-	        print int(Input[1]) ** int(Input[2])
-	    else:
-	        errors.append('ArgumentError: power takes 2 arguments')
-	        print 'ArgumentError:power takes 2 arguments'
+	if len(Input) == 3:
+	    print int(Input[1]) ** int(Input[2])
+	    
+	else:
+	     errors.append('ArgumentError: power takes 2 arguments')
+	     print 'ArgumentError:power takes 2 arguments'
     
     elif Input[0] == 'exit':
     	 break
@@ -124,10 +140,10 @@ while True:
             print param
             
     else:
-        print 'NameError: ' + Input[0] + ' is undefined.'
+        print 'NameError: \'' + Input[0] + '\' is undefined.'
         errors.append('NameError: ' + Input[0] + ' is undefined.')
   
-    if len(errors) == 0 or errors[-1] != 'NameError: ' + Input[0] + ' is undefined.':
+    if len(errors) == 0 or errors[-1] != 'NameError: \'' + Input[0] + '\' is undefined.':
         if len(Input[1:]) == 0 and Input[0] in no_params:
             print 'ArgumentError: Please include at least one argument.'
             errors.append('ArgumentError: Please include at least one argument.')
