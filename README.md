@@ -41,4 +41,9 @@ v1.3.0 Alpha:
         >greetins.txt stores the greeting you see each time you start Emalplip  
         >about.txt stores the text seen when about is used  
         >updates.txt is a list of all update  
--Added support for floats  
+    -Added support for floats  
+
+v1.4.0 Alpha:  
+    -Added print command  
+    -Added support for strings  
+    -Fixed bug with variables not working  
