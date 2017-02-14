@@ -23,6 +23,11 @@ import re
 
 no_params = ['about', 'commands_written', 'stats', 'errors']
 
+no_qoutes_needed = {
+    'defint': 0,
+    'run': 0
+}
+
 number_vars = {}
 
 while True:
@@ -45,41 +50,64 @@ while True:
     #Name_error is used later
     name_error = False
     
-    #Part_of_string is used to reassemble strings.
-    part_of_string = False
+    #quotes is used to reassemble strings that have been disassembled by split(" ").
+    quotes = None
+    
+    #part_of_string stores the number of strings that have been combined.
+    part_of_strings = 0
 
     for item in range(len(Input) - 1):
-		
+        index = item + 1 - part_of_strings
+            
+        if Input[index][0] in '\'"':
+            quotes = Input[index][0]
+            if Input[index][-1] == quotes and Input[index][-2] != '\\':
+                Input[index] = [Input[index][1:-1]]
+                
+            else:
+                Input[index] = [Input[index][1:]]
+                    
+        elif quotes != None:
+            if Input[index][-1] == quotes and Input[index][-2] != '\\':
+                Input[index - 1][0] += (' %s' % (Input[index][:-1]))
+                quotes = None
+                
+            else:
+                Input[index - 1][0] += (' %s' % (Input[index]))
+
+            del Input[index]
+            part_of_strings += 1
+            index = item + 1 - part_of_strings
+            
         '''This iterates through all of the items in Input and replaces them with
         their numeric value'''
-        
-        if len(Input[item + 1]) == 0:
-            if Input[item + 1][0] == '!': 
-                if Input[item + 1][1:] in number_vars.keys():
-                    Input[item + 1] = number_vars[Input[item + 1][1:]]
+
+        if quotes == None:
+            if Input[index][0] == '!': 
+                if Input[index][1:] in number_vars.keys():
+                    Input[index] = number_vars[Input[index][1:]]
 
                 else:
-                    errors.append('NameError: \'' + Input[item + 1][1:] + '\' is undefined')
-                    print 'NameError: \'' + Input[item + 1][1:] + '\' is undefined'
+                    errors.append('NameError: \'' + Input[index][1:] + '\' is undefined')
+                    print 'NameError: \'' + Input[index][1:] + '\' is undefined'
             
         float_compile = '^\d+\.\d+$'
         int_compile = '^\d+$'
         
-        if type(Input[item + 1]) == str:
-            if re.match(float_compile, Input[item + 1]):
-                Input[item + 1] = Input[item + 1].split('.')
-                
+        if type(Input[index]) == str:
+            if re.match(float_compile, Input[index]):
+                Input[index] = Input[index].split('.')
                 #The following line of code converts [whole part, decimal part] into a flaot
+                Input[index] = int(Input[index][0]) + int(Input[index][1]) / 10 ** len(Input[index][1])
                 
-                Input[item + 1] = int(Input[item + 1][0]) + int(Input[item + 1][1]) / 10 ** len(Input[item + 1][1])
-                
-            elif re.match(int_compile, Input[item + 1]):
-                Input[item + 1] = int(Input[item + 1])
+            elif re.match(int_compile, Input[index]):
+                Input[index] = int(Input[index])
                 
             else:
-                errors.append("NameError: '%s' is not defined." % (Input[item + 1]))
-                print "NameError: '%s' is not defined." % (Input[item + 1])
-                name_error = True
+                if Input[0] != 'defint':
+                    errors.append("NameError: '%s' is undefined." % (Input[index]))
+                    print "NameError: '%s' is undefined." % (Input[index])
+                    name_error = True
                 
     if name_error == True:
         name_error == False
@@ -104,31 +132,31 @@ while True:
         print sum(Input[1:])
       
     elif Input[0] == 'subtract':
-    	print f.subtract(Input[1:])
+        print f.subtract(Input[1:])
     
     elif Input[0] == 'multiply':
-	print f.multiply(Input[1:])
+        print f.multiply(Input[1:])
     
     elif Input[0] == 'divide':
-	print f.divide(Input[1:])
+        print f.divide(Input[1:])
     
     elif Input[0] == 'modulo':
-	print f.modulo(Input[1:])
-	 
+        print f.modulo(Input[1:])
+     
     elif Input[0] == 'power':
-	if len(Input) == 3:
-	    print int(Input[1]) ** int(Input[2])
-	    
-	else:
-	     errors.append('ArgumentError: power takes 2 arguments')
-	     print 'ArgumentError:power takes 2 arguments'
+        if len(Input) == 3:
+            print int(Input[1]) ** int(Input[2])
+        
+        else:
+            errors.append('ArgumentError: power takes 2 arguments')
+            print 'ArgumentError:power takes 2 arguments'
     
     elif Input[0] == 'exit':
-    	 break
+        break
       
     elif Input[0] == 'defint':
-    	 number_vars[Input[1]] = int(Input[2])
-    	
+       number_vars[Input[1]] = int(Input[2])
+        
     elif Input[0] == 'run':
         code = open(Input[1])
         print code.read()
@@ -137,7 +165,7 @@ while True:
 
     elif Input[0] == 'print':
         for param in Input[1:]:
-            print param
+            print param[0]
             
     else:
         print 'NameError: \'' + Input[0] + '\' is undefined.'
