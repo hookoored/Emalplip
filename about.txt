@@ -1,4 +1,4 @@
-Emalplip v1.3.0 Alpha
+Emalplip v1.4.0 Alpha
 
 Emalplip(stands for Easy Math And Logic Programming Language In Python) is a programming language that allows users to computate values with easy-to-understand commmands.
 
@@ -19,17 +19,9 @@ Commands:
     gullible - Makes user more easily tricked by commands that don't exist but are listed in the "about" section
 
 What's new:
-    -Added functions.py, run_code.py, greeting.txt, about.txt, and updates.txt
-        >Functions.py is a custom made module used to process the subtract, multiply,
-divide, and modulo functions
-        >run_code.py is used to run code files
-        >greetings.txt stores the greeting you see each time you start Emalplip
-        >about.txt stores the text seen when about is used
-        >updates.txt is a list of all updates
-    -Added support for floats
+    -Added strings
+    -Added print command
     
 What's coming:
-    -print command
     -Support for code files (file extention will be .em, but the shell can run other types)
-    -Support for strings
     -More error messages so no Python execptions will pop up
