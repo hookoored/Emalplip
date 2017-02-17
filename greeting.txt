@@ -1,2 +1,2 @@
-Emalplip v1.3.0 Alpha has now started.
+Emalplip v1.4.0 Alpha has now started.
 For more information, type "about".
