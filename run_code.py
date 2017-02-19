@@ -1,2 +1,2 @@
-def run_code(code):
-  pass
+def rc(code):
+  print code

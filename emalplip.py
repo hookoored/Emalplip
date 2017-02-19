@@ -1,5 +1,6 @@
 import sys
+import run_code
 
 code_file = open(sys.argv[1])
-print code_file.read()
+run_code.rc(code_file.read())
 code_file.close()
