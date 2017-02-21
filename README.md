@@ -14,7 +14,10 @@ To add convenience, you can make a shortcut of EmShell.py.
 Even more, you can create a shortcut of the folder itself.  
 
 ###Reporting Issues  
-Issues can be reported at https://github.com/hookoored/Emalplip/issues
+Issues can be reported at https://github.com/hookoored/Emalplip/issues  
+
+###Documentary  
+The documentary can be found [here](https://hookoored.github.io/emalplipdocs).  
 
 ##Updates  
 
