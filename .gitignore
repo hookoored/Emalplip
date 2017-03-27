@@ -2,3 +2,5 @@
 build/
 dist/
 setup.py
+*.em
+.DS_Store
