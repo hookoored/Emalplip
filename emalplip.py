@@ -1,10 +1,10 @@
-import sys
-import run_code
+from sys import argv
+from run_code import rc
 
 if len(sys.argv) == 1:
     execfile("shell.py")
 
 else:
-    code_file = open(sys.argv[1])
-    run_code.rc(code_file.read())
-    code_file.close()
+    code_file = open(argv[1])
+    code = code_file.read().split('\n').split(' ')
+    rc(code)
