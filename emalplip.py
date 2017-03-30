@@ -7,5 +7,4 @@ if len(argv) == 1:
 else:
     code_file = open(argv[1])
     code = code_file.read()
-    print type(code)
     rc(code.split('\n'))
