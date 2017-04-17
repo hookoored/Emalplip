@@ -6,6 +6,11 @@ def rc(code):
     only_spaces = re.compile("^\s+$")
     errors = []
     no_params = ['about', 'commands_written', 'stats', 'errors']
+    number_vars = {}
+    no_qoutes_needed = {
+        'defint': 0,
+        'run': 0
+    }
     
     for line in code:
         #Get input
