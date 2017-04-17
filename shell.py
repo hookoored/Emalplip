@@ -18,7 +18,7 @@ run_code is used to run code from a .em
 re (regex) is used to determine which parameters are strings
 '''
 import functions as f
-from run_code import run_code
+from run_code import rc
 import re
 
 no_params = ['about', 'commands_written', 'stats', 'errors']
