@@ -50,3 +50,6 @@ The documentary can be found [here](https://hookoored.github.io/emalplipdocs).
   - Added print command  
   - Added support for strings  
   - Fixed bug with variables not working  
+
+- v2.0.0 Beta:
+  - Added support for files
