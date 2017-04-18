@@ -140,8 +140,8 @@ def rc(code):
             number_vars[Input[1]] = int(Input[2])
             
         elif Input[0] == 'run':
-            code = open(Input[1])
-            rc(code.read().split(' '))
+            code = open(Input[1][0])
+            rc(code.read().split('\n'))
             code.close()
     
         elif Input[0] == 'print':

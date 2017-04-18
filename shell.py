@@ -158,7 +158,7 @@ while True:
         number_vars[Input[1]] = int(Input[2])
         
     elif Input[0] == 'run':
-        code = open(Input[1])
+        code = open(Input[1][0])
         rc(code.read().split(' '))
         code.close()
 
