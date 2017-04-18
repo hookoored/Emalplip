@@ -104,7 +104,7 @@ while True:
                 Input[index] = int(Input[index])
                 
             else:
-                if Input[0] != 'defint':
+                if no_qoutes_needed[Input[0]] == 0:
                     errors.append("NameError: '%s' is undefined." % (Input[index]))
                     print "NameError: '%s' is undefined." % (Input[index])
                     name_error = True
@@ -155,12 +155,11 @@ while True:
         break
       
     elif Input[0] == 'defint':
-       number_vars[Input[1]] = int(Input[2])
+        number_vars[Input[1]] = int(Input[2])
         
     elif Input[0] == 'run':
         code = open(Input[1])
-        print code.read()
-        print 'Why, that\'s some nice code you\'ve got there!\nDon\'t worry, you\'ll be able to run it soon!'
+        rc(code.read().split(' '))
         code.close()
 
     elif Input[0] == 'print':
