@@ -53,3 +53,12 @@ The documentary can be found [here](https://hookoored.github.io/emalplipdocs).
 
 - v2.0.0 Beta:
   - Added support for files
+
+- v2.0.1 Beta:
+  - Added support for the `run` command
+  
+- v2.0.1_2 Beta:
+  - Fixed bug with the `run` command returning errors
+  
+- v2.0.2 Beta:
+  - Made it easier to compile Emalplip
