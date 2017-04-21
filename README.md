@@ -4,14 +4,13 @@ Emalplip is a new programming language.
 ## How To Run  
 
 1. Navigate to the Emalplip folder  
-`cd Documents\GitHub\Emalplip`  
-2. Run EmShell.py  
-`python EmShell.py`  
+`cd ~\Documents\GitHub\Emalplip`  
+2. Run emalplip.py  
+`python emalplip.py`  
 
 ### Making Emalplip More Convenient
 
-To add convenience, you can make a shortcut of EmShell.py.  
-Even more, you can create a shortcut of the folder itself.  
+To add convenience, you can make a shortcut of emalplip.py.  
 
 ### Reporting Issues  
 Issues can be reported at https://github.com/hookoored/Emalplip/issues  
