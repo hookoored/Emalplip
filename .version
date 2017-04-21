@@ -27,11 +27,11 @@ VSVersionInfo(
       [
       StringTable(
         u'040904b0',
-        [StringStruct(u'ProductName', u'Emalplip launcher and shell'),
+        [StringStruct(u'ProductName', u'Emalplip'),
         StringStruct(u'ProductVersion', u'2.0.2'),
         StringStruct(u'InternalName', u'Emalplip'),
         StringStruct(u'OriginalFilename', u'emalplip.exe'),
-        StringStruct(u'FileDescription', u'What you use to run the shell and .em files'),
+        StringStruct(u'FileDescription', u'Emalplip launcher and shell'),
         StringStruct(u'LegalCopyright', u'Copyright 2017 Hookoored')])
       ]),
     VarFileInfo([VarStruct(u'Translation', [1033, 1200])])
