@@ -1,4 +1,4 @@
-Emalplip v2.0.0 Beta
+Emalplip v2.0.2 Beta
 
 Emalplip(stands for Easy Math And Logic Programming Language In Python) is a programming language that allows users to computate values with easy-to-understand commmands.
 
