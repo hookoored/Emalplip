@@ -1,2 +1,2 @@
-Emalplip v2.0.0 Beta has now started.
+Emalplip v2.0.2 Beta has now started.
 For more information, type "about".
