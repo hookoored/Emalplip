@@ -1,8 +1,9 @@
 from sys import argv
 from run_code import rc
+from shell import shell
 
 if len(argv) == 1:
-    execfile("shell.py")
+    shell()
 
 else:
     code_file = open(argv[1])
