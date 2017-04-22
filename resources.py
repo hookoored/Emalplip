@@ -15,7 +15,8 @@ Commands:
     errors - Shows all errors the user has made
     commands_written - Shows all commands the player has inputed
     stats - Shows number of errors made and number of commands executed
-    exit - Exits Emalplip and returns to standard Python Shell
+    exit - Exits Emalplip
+    run file - Runs file
     gullible - Makes user more easily tricked by commands that don't exist but are listed in the "about" section
 
 What's new:
