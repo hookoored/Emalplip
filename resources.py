@@ -1,4 +1,4 @@
-about = """Emalplip v2.0.2 Beta
+about = """Emalplip v2.0.2_1 Beta
 
 Emalplip(stands for Easy Math And Logic Programming Language In Python) is a programming language that allows users to computate values with easy-to-understand commmands.
 
@@ -25,5 +25,5 @@ What's new:
 What's coming:
     - More error messages so no Python execptions will pop up"""
 
-greeting = """Emalplip v2.0.2 Beta has now started.
+greeting = """Emalplip v2.0.2_1 Beta has now started.
 For more information, type "about"."""
