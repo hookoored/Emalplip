@@ -1,10 +1,6 @@
 def shell():
-    greeting = open('greeting.txt', 'r')
-    print greeting.read()
-    greeting.close()
-    
-    about_file = open('about.txt', 'r')
-    about = about_file.read()
+    from resources import about, greeting
+    print greeting
     
     errors = []
     inputs = []
@@ -175,5 +171,3 @@ def shell():
             if len(Input[1:]) == 0 and Input[0] in no_params:
                 print 'ArgumentError: Please include at least one argument.'
                 errors.append('ArgumentError: Please include at least one argument.')
-                
-    about_file.close()
